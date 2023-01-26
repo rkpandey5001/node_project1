@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="/css/user_profile.css">
+
+<title><%= title %></title>
+
+
+<h1>Codeial /<%= title %></h1>
+
+<section id="feed-posts">
+  <h4>Posts</h4>
+  <% if(locals.user) { %>
+  <form action="/posts/create" id="new-post-form" method="post">
+    <textarea name="content" cols="30" rows="3" placeholder="Typing here..."></textarea>
+    <input type="submit" value="Post">
+  </form>
+  <% } %>
+
+  <div id="posts-list-container">
+    <ul class="dis-box">
+     <% for(post of posts) { %>
+      <li>
+        <div><%= post.content %><small><br>Posted by:<span style='font-size:15px;'>&#128104;</span><%= post.user.name %></small></div>
+        <div>Posted at :📅<%= post.createdAt.toDateString().substr(3,12) %></div>
+      </li>
+     <% } %>
+    </ul>
+ </div>
+</section>
+<!-- <div>
+    <div id="=posts-list-container">
+       <ul>
+        <% for(post of posts) { %>
+         <li><%= post.content %></li>
+        <% } %>
+       </ul>
+    </div>
+</div> -->

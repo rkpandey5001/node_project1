@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/user_profile.css">
+<div>
+    <div id="box">
+    <div class="title"><%= title %></div>
+    <ul>
+        <% if(locals.user){ %>
+            <li><%= user.name %></li>
+            <li>
+                <a href="/users/sign-out">Sign Out</a>
+            </li>
+        <% } else { %>
+            <li>
+                <a href="/users/sign-in">Sign In</a>
+            </li>
+    
+            <li>
+                <a href="/users/sign-up">Sign Up</a>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+    <div id="box1">
+    <div>
+    <div class="head">User Id</div><div class="ans space"><%=user.id%></div>
+    </div>
+    <div>
+        <div class="head">User name</div><div class="ans space"><%=user.name%></div>
+    </div>
+    <div>
+        <div class="head">User Email</div><div class="ans space"><%=user.email%></div>
+    </div>
+    <div>
+        <div class="head">Password</div><div class="ans space"><%=user.password%></div>
+    </div>
+</div>
+</div>

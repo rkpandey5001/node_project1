@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+form {
+  background-color: cyan;
+  width: 21%;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-top: 90px;
+  padding: 10px;
+  flex-direction: column; }
+
+form > input {
+  padding-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+form > h1 {
+  border: 1px solid black;
+  background: crimson;
+  border: none;
+  color: white; }
+
+input[type="submit"] {
+  background-color: green;
+  color: white;
+  padding-bottom: 10px;
+  border: none;
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px; }
