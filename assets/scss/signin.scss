@@ -7,31 +7,47 @@ body{
 
 #container{
     background: white;
-    width: 30%;
-    padding: 50px;
-    height: 50vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#container>h1{
+    text-align: center;
+}
+
+#container1{
+    background: white;
+    border: 1px solid black;
     margin: auto;
     text-align: center;
     border-radius: 5px;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 input{
     margin-top: 20px;
 }
 
-#container{
-    // border: 1px solid black;
-    margin: 70px auto;
-}
 form{
     display: flex;
     flex-direction: column;
+    padding: 30px 30px;
+
+}
+
+form>input{
+    padding: 10px 10px;
+    margin: 10px 10px;
 
 }
 input[type="submit"]{
     background: green;
     color: white;
-    width: 150px;
+    width: 170px;
     margin: auto;
     padding: 5px 20px;
     border: none;
@@ -40,16 +56,19 @@ input[type="submit"]{
     border-radius: 10px;
 }
 
+
+
 p{
     margin-top: 5px;
     margin-bottom: 15px;
 }
 a{
     background-color: crimson;
-    padding: 5px 50px;
+    padding: 5px 60px;
     color: white;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: -5px;
+    margin-bottom: 20px;
     border-radius: 10px;
     text-decoration: none;
 }

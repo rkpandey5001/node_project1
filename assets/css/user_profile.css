@@ -68,6 +68,7 @@ li {
   flex-direction: column;
   height: 500px;
   margin: auto;
+  background-color: cyan;
   border: 3px solid black;
   margin-top: 20px;
   width: 100%;
@@ -86,6 +87,7 @@ h4 {
   color: #fffcfc;
   width: 90%;
   display: flex;
+  flex-direction: column;
   margin: auto;
   border-radius: 5px;
   justify-content: space-between;
@@ -96,8 +98,54 @@ h4 {
 .display {
   display: flex; }
 
+#posts {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black; }
+
 #posts-list-container {
-  background-color: cyan;
   margin: auto;
   margin-top: 20px;
   width: 50%; }
+
+#user-friends > p > a {
+  color: white; }
+
+#user-friends {
+  border-left: 3px solid #8a8787;
+  width: 20%;
+  height: 500px;
+  overflow-y: scroll;
+  padding: 0px 10px;
+  margin-top: 70px;
+  margin-right: 10px; }
+
+#user-friends > p {
+  background-color: #037938;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border-radius: 5px; }
+
+.post-comments-list {
+  background-color: white; }
+
+.post-comments-list > ul > li {
+  color: #f7f4f4;
+  padding: 5px 5px;
+  margin-top: 3px;
+  border-radius: 5px;
+  width: 70%;
+  margin-top: 10px;
+  margin-left: 170px;
+  background-color: #eb720f; }
+
+#user-friends > h4 {
+  position: sticky;
+  background-color: white;
+  top: 1px;
+  padding: 10px 2px; }
+
+#feed-posts {
+  border-radius: 3px solid black;
+  display: flex; }

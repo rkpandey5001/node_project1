@@ -1,9 +1,13 @@
 const User=require('../models/user');
 const Post=require('../models/post');
 module.exports.profile=function(req,res){
-    // res.render('user_profile',{
-    //     title:'users controller'
-    // })
+    User.findById(req.params.id,function(err,user){
+        return res.render('user_profile',{
+        title:'Users Profile',
+        profile_user:user
+    });
+    });
+}
 
     // if(req.params.user_id){
         ////////
@@ -39,13 +43,62 @@ module.exports.profile=function(req,res){
 //     posts:posts
 // });
 ///populate the user
+
+
+// module.exports.update=async function(req,res){
+//     console.log("user",req.user.id);
+//     console.log("params",req.params.id);
+//     console.log("body",req.body);
+// if(req.user.id==req.params.id)
+// {
+//     User.findByIdAndUpdate(req.params.id,req.body,function(err,user)
+//     {
+//         return res.redirect('back');
+//     });
+// }
+// else{
+//     return res.status(401).send('Unauthorized');
+// }
+// }
+
+module.exports.update=async function(req,res){
+if(req.user.id==req.params.id)
+{
+    try{
+    let user=await User.findById(req.params.id);
+    User.uploadedAvatar(req,res,function(err){
+        if(err){console.log('***Multer error',err)}
+        console.log(req.file);
+        user.name=req.body.name;
+        user.name=req.body.email;
+        if(req.file){
+            user.avatar=User.avatarPath+'/'+req.file.filename;
+        }
+        user.save();
+        return res.redirect('back');
+    });
+}catch(err){
+    req.flash('error',err);
+    return res.redirect('back');
+}
+}
+else{
+    req.flash('error','Unauthorized');
+    return res.status(401).send('Unauthorized');
+}
+}
+
+
+module.exports.home=function(req,res){
 Post.find({}).populate('user').exec(function(err,posts){
         return res.render('home',{
         title: "Codeial | Home" ,
         posts:posts
+        
 });
 });
 }
+
 
 // reder the sign in page
 module.exports.signIn=function(req,res){
@@ -99,7 +152,7 @@ module.exports.createSession=function(req,res){
 //steps to authenticate
 
 console.log("Session created");
-
+req.flash('success','Logged in successfully');
 // return res.redirect('/users/profile');
 return res.redirect('/');
 //find the user
@@ -130,6 +183,7 @@ return res.redirect('/');
 module.exports.deleteSession=function(req,res){
     //steps to authenticate
     req.logout();
+    req.flash('success','You are logged out !');
     return res.redirect('/');
     // console.log("Session deleted");
     // console.log(req.query);

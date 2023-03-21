@@ -79,6 +79,7 @@ li{
     flex-direction: column;
     height: 500px;
     margin: auto;
+    background-color: cyan;
     border: 3px solid black;
     margin-top: 20px;
     width: 100%;
@@ -100,6 +101,7 @@ h4{
     color: rgb(255, 252, 252);
     width: 90%;
     display: flex;
+    flex-direction: column;
     margin: auto;
     border-radius: 5px;
     justify-content: space-between;
@@ -113,10 +115,63 @@ display: flex;
 // border: 1px solid black;
 }
 
+#posts{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
 #posts-list-container{
-    // border: 1px solid black;
-    background-color: cyan;
+    // background-color: cyan;
     margin: auto;
     margin-top: 20px;
     width: 50%;
+}
+
+#user-friends>p>a{
+    color: white;
+}
+
+#user-friends{
+border-left: 3px solid rgb(138, 135, 135); 
+width: 20%;
+height: 500px;
+overflow-y: scroll;
+padding:0px 10px;
+margin-top: 70px;
+margin-right: 10px;
+}
+
+#user-friends>p{
+    background-color: rgb(3, 121, 56);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.post-comments-list{
+    background-color: white;
+}
+
+.post-comments-list>ul>li{
+    color: rgb(247, 244, 244);
+    padding: 5px 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 170px;
+    background-color: rgb(235, 114, 15);
+}
+
+#user-friends>h4{
+    position: sticky;
+    background-color: white;
+    top: 1px;
+    padding: 10px 2px;
+}
+
+#feed-posts{
+    border-radius: 3px solid black;
+    display: flex;
 }

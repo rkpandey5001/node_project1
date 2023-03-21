@@ -8,5 +8,7 @@ router.get('/',homeController.home);
 // router.get('/contacts',homeController.contacts);
 // router.get('/profile',userController.profile);
 router.use('/users',require('./users'));
+router.use('/comments',require('./comments'));
 router.use('/posts',require('./posts'));
+router.use('/api',require('./api'));
 module.exports=router;
